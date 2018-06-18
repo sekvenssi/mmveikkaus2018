@@ -1,0 +1,5 @@
+export const foo = '';
+
+export const PARTICIPANT_ACTIONS = {
+  LOAD_PARTICIPANTS: 'PARTICIPANT_LOAD_PARTICIPANTS',
+};
