@@ -10,7 +10,13 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: { /*
+       '/api': {
+        target: 'https://omzi98lh47.execute-api.us-east-1.amazonaws.com/dev',
+        changeOrigin: true,
+        secure: false,
+      }, */
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
