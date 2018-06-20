@@ -6,8 +6,13 @@
           <h4><v-icon>trending_up</v-icon> Top 10</h4>
         </v-toolbar-title>
       </v-toolbar>
-      <v-list>
-        <template v-for="(item, index) in topTen">
+      <div class="pads" v-if="isLoading">
+        <v-progress-circular
+          :size="70" :width="7"
+          indeterminate color="purple"></v-progress-circular>
+      </div>
+      <v-list v-else>
+        <template  v-for="(item, index) in topTen">
           <top-item
             :key="item.id"
             :id="item.id"
@@ -22,6 +27,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import { PARTICIPANT_ACTIONS } from '../store/action-types';
 import TopItem from './TopItem';
 
@@ -37,6 +43,9 @@ export default {
     topTen() {
       return this.$store.getters.topParticipants(10);
     },
+    ...mapState({
+      isLoading: state => state.participantModule.participantsLoading,
+    }),
   },
   methods: {
     load() {
@@ -46,5 +55,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+  .pads {
+    padding: 25px 0px;
+  }
 </style>

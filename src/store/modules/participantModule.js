@@ -4,6 +4,9 @@ import { participantGetters } from '../getters/participantGetters';
 
 export const participantState = {
   participants: [],
+  participantsLoading: false,
+  participant: {},
+  participantLoading: false,
 };
 
 export const participantModule = {
