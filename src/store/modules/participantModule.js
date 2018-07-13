@@ -5,8 +5,12 @@ import { participantGetters } from '../getters/participantGetters';
 export const participantState = {
   participants: [],
   participantsLoading: false,
-  participant: {},
+  participant: null,
   participantLoading: false,
+  standing: null,
+  standingLoading: false,
+  totalBets: null,
+  totalBetsLoading: false,
 };
 
 export const participantModule = {
